@@ -7,36 +7,72 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <!-- font-blinker -->
+    <!-- fonts-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Blinker:wght@100;300&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;1,400;1,500&display=swap" rel="stylesheet">
+
 
     <title>Journal</title>
     <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    
+    <!-- navbar -->
     <nav class="navbar navbar-inverse">
-        <div class="container-fluid">
+        <div class="container">
             <ul class="nav justify-content-center space-left">
-                <li><a href="#">NEW ENTRY</a></li>
+                <li><a href="#" class="new-entry">NEW ENTRY</a></li>
                 <li><a href="#">VIEW ENTRIES</a></li>
               </ul>
           <div class="navbar-header">
             <a class="navbar-brand" href="#">JOURNAL</a>
           </div>
           <ul class="nav navbar-right space-right">
-            <li><a href="#">ACCOUNT</a></li>
+            <li><a href="#" class="new-entry">ACCOUNT</a></li>
             <li><a href="#">USERNAME</a></li>
           </ul>
         </div>
       </nav>
+    
+      <!-- body -->
+      <div class="container-fluid">
+        <h1 class="month-title">Month's entries</h1>
+      </div>
 
+
+      <!-- popup when you click new entry -->
+      <div class="bg-modal">
+        <div class="modal-content">
+          <div class="close-modal">+</div>
+          <img src="images/diary-picture.png" alt="Write in diary" class="diary-image">
+          <label class="recent-date">Date: <a id="date-today"></a></label>
+          <input type="text" placeholder="Title Entry" class="modal-text">
+          <textarea class="modal-tarea" name="" id="" cols="30" rows="5" placeholder="Write down what you're thinking"></textarea>
+          
+        </div>
+      </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    
+    <!-- javascript -->
+    <script>
+      let dateToday = document.getElementById("date-today");
+
+      let today = new Date();
+      let day = `${today.getDate() < 10 ? "0": ""}${today.getDate()}`;
+      // month
+      let month = `${(today.getMonth() + 1) < 10 ? "0": ""}${today.getMonth() + 1}`; 
+      //year
+      let year = today.getFullYear();
+
+      dateToday.textContent = `${day}/${month}/${year}`;
+      
+    </script>
   </body>
 </html>
