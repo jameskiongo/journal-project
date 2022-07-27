@@ -10,6 +10,7 @@ body{
 }
 .navbar .navbar-header .navbar-brand{
     font-size: 27px;
+    font-weight: 300;
     font-family: 'Blinker', sans-serif;
     color: #7D9D9C;
 }
@@ -26,6 +27,7 @@ body{
         font-size: 37px;
         font-family: 'Blinker', sans-serif;
         color: #7D9D9C;
+        
     }
     .space-left{
         margin-left: 200px;
